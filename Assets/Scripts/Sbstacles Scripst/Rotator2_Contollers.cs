@@ -4,17 +4,14 @@ using DG.Tweening;
 public class Rotator2_Contollers : MonoBehaviour
 {
     public GameObject rotator2;
-    public float speed;
+    public float duration;
     public bool direction;
-    private void Update()
+
+    private void Awake()
     {
-        if(direction == false)
-        {
-            rotator2.transform.DORotate(new Vector3 (0,speed*Time.deltaTime,0),-1,RotateMode.WorldAxisAdd);
-        }
-        else
-        {
-            rotator2.transform.DORotate(new Vector3 (0,-1*speed*Time.deltaTime,0),-1,RotateMode.WorldAxisAdd);
-        }
+        var moveRot = direction == false ? -360 : 360;
+            rotator2.transform.DOLocalRotate(Vector3.up * (rotator2.transform.localEulerAngles.y + moveRot),duration,RotateMode.FastBeyond360)
+            .SetLoops(-1,LoopType.Restart)
+            .SetEase(Ease.Linear);
     }
 }

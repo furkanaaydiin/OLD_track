@@ -7,21 +7,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4645517506428039165, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
+      propertyPath: duration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4645517506428039165, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
+      propertyPath: direction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911444474675289079, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aab74d1a7b8a4c499d7524d75633deb, type: 2}
     - target: {fileID: 7130305851864831722, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7130305851864831722, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.2623591
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130305851864831722, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.16
+      value: -3.309003
       objectReference: {fileID: 0}
     - target: {fileID: 7130305851864831722, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -5.515564
       objectReference: {fileID: 0}
     - target: {fileID: 7130305851864831722, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.3493195
+      value: 11.750482
       objectReference: {fileID: 0}
     - target: {fileID: 7130305851864831722, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217350392033672138, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
       propertyPath: m_Name
-      value: Cylinder
+      value: Cylinder Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8297477385347787440, guid: 87c823d0043c46b4b9aec854392de274, type: 3}
       propertyPath: m_Materials.Array.data[0]

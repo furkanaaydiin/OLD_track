@@ -7,15 +7,25 @@ using DG.Tweening;
 public class Resitance_Contollers : MonoBehaviour
 {
 
-    public GameObject residance;
+    public Transform residance;
     public float duration;
     private bool _direction;
-    private Transform newtrasform;
+    public float goPos;
+    
     
     private void Awake()
     {
-       this.gameObject.transform.localPosition =  Vector3.right *(_direction ? -3 : 3);
-       transform.DOLocalMoveX (_direction ? 3 : -3, duration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+        residance.localPosition = Vector3.zero;
+        if(_direction == false)
+        {
+        residance.DOLocalMoveX(goPos,duration).SetEase(Ease.Linear).SetLoops(-1,LoopType.Yoyo);
+        }
+        else
+        {
+        residance.DOLocalMoveX(-1 * goPos,duration).SetEase(Ease.Linear).SetLoops(-1,LoopType.Yoyo);
+        }
+
+        
     }
 }
 

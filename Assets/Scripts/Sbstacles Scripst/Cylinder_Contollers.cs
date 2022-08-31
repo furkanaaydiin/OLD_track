@@ -3,18 +3,23 @@ using DG.Tweening;
 
 public class Cylinder_Contollers : MonoBehaviour
 {
-    public GameObject cylinder;
-    public float speed;
+    public Rigidbody cylinder;
+    public float duration;
     public bool direction;
-    private void Update()
-    {
-        if(direction == false)
+
+    public float force = 20;
+
+
+            void FixedUpdate()
         {
-           cylinder.transform.DORotate( new Vector3 (0,0,speed*Time.deltaTime),-1,RotateMode.WorldAxisAdd);
+            Quaternion deltaRotation = Quaternion.Euler(Vector3.up * (direction == true ? -20 : 20) * Time.fixedDeltaTime);
+            cylinder.MoveRotation(cylinder.rotation * deltaRotation);
         }
-        else
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Player"))
         {
-            cylinder.transform.DORotate( new Vector3 (0,0, -1 * speed*Time.deltaTime),-1,RotateMode.WorldAxisAdd);
+            other.GetComponent<Rigidbody>().AddForce((direction == true ? Vector3.left : Vector3.right)*force,ForceMode.Force);
         }
     }
 }
