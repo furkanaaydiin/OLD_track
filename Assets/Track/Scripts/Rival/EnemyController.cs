@@ -4,6 +4,9 @@ using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
 
+namespace rival
+{
+    
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
@@ -47,6 +50,11 @@ public class EnemyController : MonoBehaviour
                 return;
             StartCoroutine(Dead());
         }
+        if(other.CompareTag("Finish"))
+        {
+           animator.SetTrigger("Finished");
+          // StopCoroutine(Dead());
+        }
     }
 
     private void NextPosition(bool withoutIncrease = false)
@@ -70,4 +78,8 @@ public class EnemyController : MonoBehaviour
     {
         transform.DOKill();
     }
+
+    
+    
+}
 }
